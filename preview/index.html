@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div data-controller="hello" lazy-controller>
+      <input data-hello-target="name" type="text" />
+      <button data-action="click->hello#greet">Greet</button>
+      <span data-hello-target="output"></span>
+    </div>
+
+    <script type="module">
+      import { Application } from "https://cdn.skypack.dev/@hotwired/stimulus";
+      import { start } from "./dist/index.modern.js";
+
+      start(Application.start());
+    </script>
+  </body>
+</html>
