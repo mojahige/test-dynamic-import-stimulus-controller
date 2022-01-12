@@ -7,15 +7,23 @@
     <title>Document</title>
   </head>
   <body>
-    <div data-controller="hello" lazy-controller>
+    <div data-controller="hello" data-controller-path="../preview/" lazy-controller>
       <input data-hello-target="name" type="text" />
       <button data-action="click->hello#greet">Greet</button>
       <span data-hello-target="output"></span>
     </div>
 
+    <hr>
+
+    <div data-controller="foo" data-controller-path="../preview/assets/javascripts/" lazy-controller>
+      <input data-foo-target="name" type="text" />
+      <button data-action="click->foo#greet">Greet</button>
+      <span data-foo-target="output"></span>
+    </div>
+
     <script type="module">
       import { Application } from "https://cdn.skypack.dev/@hotwired/stimulus";
-      import { start } from "./dist/index.modern.js";
+      import { start } from "../dist/index.modern.js";
 
       start(Application.start());
     </script>
