@@ -10,11 +10,12 @@
   "module": "./dist/index.module.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "dev": "microbundle --watch & npm run preview",
     "build": "npm run clean && npm run bundle -- --sourcemap false",
     "bundle": "microbundle --format esm,modern",
     "clean": "rimraf dist",
     "copy": "cpx dist/index.modern.js preview/dist",
-    "preview": "http-server preview --port 1234",
+    "preview": "http-server --port 1234",
     "check:type": "tsc --noEmit"
   },
   "author": "mojahige (Yu Nozato)",
